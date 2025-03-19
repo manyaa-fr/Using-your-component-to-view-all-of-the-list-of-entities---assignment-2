@@ -1,7 +1,5 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import Postcard from './components/postcard';
 
 function App() {
 
@@ -30,9 +28,20 @@ function App() {
   ];
 
   return (
-    <>
-      
-    </>
+    <div>
+      <h1>Posts</h1>
+    <div className='card'>
+      {initialPosts.map((post) => (
+        <Postcard
+        key = {post.id}
+        profileImage = {post.profileImage}
+        username = {post.username}
+        content = {post.content}
+        isLiked = {post.isLiked}
+        />
+      ))}
+    </div>
+    </div>
   )
 }
 
